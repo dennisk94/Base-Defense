@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.scoreWrapper {
+    font-size: 14px;
+    position: absolute;
+    left: 1rem;
+    color: white;
+    padding: 1rem;
+    user-select: none;
+}
+
+.game-over-wrapper {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.game-start-wrapper {
+    /* display: none; */
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.game-over-heading {
+    font-size: 14px;
+    color: gray;
+}
+
+.total-score {
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: .5rem;
+}
+
+.game-over-wrapper p {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+}
+
+.restart {
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    transition: .2s ease-in;
+}
+
+.restart:hover {
+    background-color: rgb(109, 240, 196);
+}
+
+.sound {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    padding: 8px;
+}
+
+.sound svg {
+    cursor: pointer;
+}
+
+.instructions {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    margin: 1rem 0;
+}

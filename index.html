@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Canvas Game</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scoreWrapper">
+      <span>Score: <span id="score">0</span></span>
+    </div>
+
+    <div class="sound">
+      <svg
+        id="volumeUp"
+        xmlns="http://www.w3.org/2000/svg"
+        style="color: white; width: 20px; height: 20px"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+        />
+      </svg>
+      <svg
+        id="volumeOff"
+        xmlns="http://www.w3.org/2000/svg"
+        style="color: white; width: 20px; height: 20px; display: none"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+          clip-rule="evenodd"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+        />
+      </svg>
+    </div>
+
+    <div class="instructions">
+      <button
+        type="button"
+        class="btn btn-light"
+        data-bs-toggle="modal"
+        data-bs-target="#instructionsModal"
+      >
+        Instructions
+      </button>
+    </div>
+
+    <div
+      class="modal fade"
+      id="instructionsModal"
+      tabindex="-1"
+      aria-labelledby="instructionsModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Shoot all incoming enemies before they take over your base!</p>
+            <p>Consume lightning bolts to power up.</p>
+            <ul>
+              <li>W - Up</li>
+              <li>A - Left</li>
+              <li>S - Down</li>
+              <li>D - Right</li>
+              <li>Mouse Click - Shoot</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-over-wrapper" id="modal">
+      <label class="game-over-heading">Game Over</label>
+      <h1 id="modal-score" class="total-score">0</h1>
+      <p>Points</p>
+      <button class="restart" id="restart-button">Restart Game</button>
+    </div>
+
+    <div class="game-start-wrapper" id="game-start-modal">
+      <h1 class="total-score">Base Defense</h1>
+      <button class="restart" id="start-btn">Start</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+      integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/audio.js"></script>
+    <script src="js/classes.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
